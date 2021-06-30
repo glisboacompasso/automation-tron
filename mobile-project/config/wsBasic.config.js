@@ -1,11 +1,19 @@
 wd = require('wd');
 
+let secrets = require('./files/secrets.json')
+
 const Context = require('../state/context');
 let context = new Context();
 
 
+let BrowserStackLocal = require('browserstack-local')
 
-let secrets = require('./files/secrets.json')
+let bsLocal = new BrowserStackLocal.Local()
+const bsLocalArg = {'key': secrets.browserstackkey,
+                    'forceLocal': 'true',
+                    'force':true
+                    }
+
 
 
 const browserStackCaps = {
@@ -13,6 +21,7 @@ const browserStackCaps = {
             'browserstack.user' : secrets.browserstackuser,
             'browserstack.key'  : secrets.browserstackkey,
             'browserstack.debug' : true,
+            'browserstack.local' : true,
             'project' : 'POC - BDD - JavaScript - CHATBOT - RASA',
 }
 
@@ -51,7 +60,7 @@ let AndroidCaps = function () { return {
 
   // Set other BrowserStack capabilities
   'build' : 'ChatBot-Mobile - Android',
-  'name': 'first_test'
+  'name': `Compatibilidade (${context.getDevice().model} Android: ${context.getDevice().version})`
 }
 
 }
@@ -60,5 +69,7 @@ const appiumDriver  = wd.promiseRemote("http://hub-cloud.browserstack.com/wd/hub
 
 
 
-module.exports ={ IOSCaps, AndroidCaps, appiumDriver}
+
+
+module.exports ={ IOSCaps, AndroidCaps, appiumDriver, bsLocal, bsLocalArg}
 
