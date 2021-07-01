@@ -1,0 +1,21 @@
+{
+  "name": "appium-wd-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test",
+    "android-ios": "cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"iPhone12Pro\\\",\\\"system\\\":\\\"ios\\\",\\\"version\\\":\\\"14.0\\\"}} && cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"GooglePixel3\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"9.0\\\"}}",
+    "ios": "cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"iPhone12Pro\\\",\\\"system\\\":\\\"ios\\\",\\\"version\\\":\\\"14.0\\\"}}",
+    "android": "cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"GooglePixel3\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"9.0\\\"}} && cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"SamsungGalaxyS7\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"6.0\\\"}} && cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"SamsungGalaxyS8Plus\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"7.0\\\"}} && cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"GooglePixel\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"8.0\\\"}} && cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"XiaomiRedmiNote9\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"10.0\\\"}} && cucumber-js mobile-project\test --world-parameters {\\\"device\\\":{\\\"model\\\":\\\"SamsungGalaxyS21\\\",\\\"system\\\":\\\"Android\\\",\\\"version\\\":\\\"11.0\\\"}}",
+    "bs": "BrowserStackLocal.exe --key GSxUBJsFqF5HyWR2AYez --force-local"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "cucumber": "^7.0.0-rc.0",
+    "wd": "^1.14.0"
+  }
+}
