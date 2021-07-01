@@ -70,7 +70,7 @@ async function setImplicitWaitTimeout() {
 
     let driver = await context.getDriver()
 
-    await driver.setImplicitWaitTimeout(50000)
+    await driver.setImplicitWaitTimeout(1000000)
 
 }
 
